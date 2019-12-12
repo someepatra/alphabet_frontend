@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.mainDiv{
+  display: flex;
+  flex-direction: row
+}
+.leftSide{
+  flex: 8;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.rightSide{
+  flex: 4;
+}
+
+.eachAlpha {
+  margin: 25px;
+}
+
+.alphaStyle{
+  font-size: 50px;
+  color: red;
+}
