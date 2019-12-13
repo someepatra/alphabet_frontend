@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <Router>
         <Route path="/" exact render={() => (<div>{renderAlphabet}</div>)} />
-        <Route path="/quiz" component={Quiz} />
+        <Route path="/quiz" render={() => <Quiz alphabets={alphabets} />} />
       </Router>
     );
   }

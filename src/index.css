@@ -13,7 +13,8 @@ code {
 }
 .mainDiv{
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  background-color: rgb(73, 226, 200);
 }
 .leftSide{
   flex: 8;
@@ -22,14 +23,40 @@ code {
   flex-wrap: wrap;
 }
 .rightSide{
+  margin-top: 80px;
   flex: 4;
 }
 
 .eachAlpha {
-  margin: 25px;
+  margin: 35px;
 }
 
 .alphaStyle{
   font-size: 50px;
   color: red;
+}
+.quizalpha{
+  font-size: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.card{
+  margin-left: 60px;
+  box-shadow: 0 4px 8px 0 rgba(226, 116, 116, 0.2);
+  transition: 0.3s;
+  width: 40%;
+  
+  
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(226, 116, 116, 0.2);
+}
+
+#card1{
+  box-shadow: 0 4px 8px ;
+  transition: 1s;
+  width: 50px;
+}
+#card1{
+  box-shadow: 0 8px 16px 0 rgba(93, 34, 231, 0.2);
 }

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-// import axios from "axios";
 import Cards from './Cards'
-
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 class Alphabets extends Component {
@@ -20,8 +18,6 @@ class Alphabets extends Component {
         });
 
         console.log(this.props.alphabets);
-        // console.log("mounted", this.state.currentAlphabet);
-
         this.setState({
             selectedCard: this.props.alphabets[0].cards[0]
         })
@@ -35,13 +31,11 @@ class Alphabets extends Component {
 
     render() {
         return (
-
-
             <div className="mainDiv">
                 <div className="leftSide">
                     {this.state.alphabets.map((alphabet, index) => {
                         return (
-                            <div className="eachAlpha">
+                            <div className="eachAlpha" id="card1">
                                 <div key={alphabet.id}>
                                     <h3 onClick={() => {
                                         this.setCard(index)
@@ -52,7 +46,9 @@ class Alphabets extends Component {
                     })}
                 </div>
                 <div className="rightSide">
-                    <Cards card={this.state.selectedCard} />
+                    <div className="card">
+                        <Cards card={this.state.selectedCard} />
+                    </div>
                     <h1>Do u want to play a game</h1>
                     {/* <button >yes</button> */}
                     <Link to="/quiz"><button>Yes</button></Link>
