@@ -8,7 +8,7 @@ class Quiz extends Component {
         this.state = {
             cards: [],
             alphabets: [],
-            index: 1,
+            index: 0,
             displayCard: {},
             onealpha: {},
             toHomePage: false,
@@ -20,6 +20,7 @@ class Quiz extends Component {
         this.renderRedirect = this.renderRedirect.bind(this)
         this.shuffleImages = this.shuffleImages.bind(this)
         this.shuffle = this.shuffle.bind(this)
+        this.random = this.random.bind(this)
     }
 
     async callAPI() {
@@ -34,24 +35,7 @@ class Quiz extends Component {
             console.log("show error: ", err);
         }
     }
-
-    async componentDidMount() {
-
-        await this.callAPI();
-
-        let cardList = this.state.alphabets.map(alphabet => {
-            return alphabet.cards[0]
-        })
-
-        this.setState({
-            cards: cardList
-        })
-
-        this.setState({
-            onealpha: this.state.alphabets[0],
-            displayCard: this.state.cards[0]
-        })
-
+    random() {
         let randomIndex1 = 0;
         let randomIndex2 = 0;
 
@@ -62,38 +46,38 @@ class Quiz extends Component {
             randomIndex2 = Math.floor(Math.random() *
                 this.state.alphabets.length);
         } while (randomIndex1 === randomIndex2 || randomIndex1 === this.state.index || randomIndex2 === this.state.index)
-
         this.setState({
             random1: this.state.alphabets[randomIndex1].cards[0],
             random2: this.state.alphabets[randomIndex2].cards[0]
         })
+    }
+    async componentDidMount() {
+        await this.callAPI();
+        let cardList = this.state.alphabets.map(alphabet => {
+            return alphabet.cards[0]
+        })
 
+        this.setState({
+            cards: cardList
+        })
+
+        this.setState({
+            onealpha: this.state.alphabets[this.state.index],
+            displayCard: this.state.cards[this.state.index]
+        })
+        this.random();
     }
 
-    nextQuiz() {
-
-        if (this.state.index < 26) {
-            this.setState({
+    async nextQuiz() {
+        if (this.state.index < 25) {
+            await this.setState({
                 index: this.state.index + 1
             })
-
-
-            let randomIndex1 = 0;
-            let randomIndex2 = 0;
-
-
-            do {
-                randomIndex1 = Math.floor(Math.random() *
-                    this.state.alphabets.length);
-                randomIndex2 = Math.floor(Math.random() *
-                    this.state.alphabets.length);
-            } while (randomIndex1 === randomIndex2 || randomIndex1 === this.state.index || randomIndex2 === this.state.index)
+            this.random();
 
             this.setState({
                 onealpha: this.state.alphabets[this.state.index],
-                displayCard: this.state.cards[this.state.index],
-                random1: this.state.alphabets[randomIndex1].cards[0],
-                random2: this.state.alphabets[randomIndex2].cards[0]
+                displayCard: this.state.cards[this.state.index]
             })
         } else {
             this.setState({
