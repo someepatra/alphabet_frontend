@@ -21,6 +21,7 @@ class Quiz extends Component {
         this.shuffleImages = this.shuffleImages.bind(this)
         this.shuffle = this.shuffle.bind(this)
         this.random = this.random.bind(this)
+        this.goBack = this.goBack.bind(this)
     }
 
     async callAPI() {
@@ -86,6 +87,12 @@ class Quiz extends Component {
         }
     }
 
+    goBack() {
+        this.setState({
+            toHomePage: true
+        })
+    }
+
     renderRedirect = () => {
         if (this.state.toHomePage) {
             return <Redirect to='/' />
@@ -99,37 +106,55 @@ class Quiz extends Component {
     shuffleImages = () => {
 
         let images = [
-            (<img onClick={() => this.nextQuiz()} src={this.state.displayCard.img} alt={this.state.displayCard.name} />),
-            (<img src={this.state.random1.img} alt={this.state.displayCard.name} />),
-            (<img src={this.state.random2.img} alt={this.state.displayCard.name} />)
+            (<img className="imgSrc" onClick={() => this.nextQuiz()} src={this.state.displayCard.img} alt={this.state.displayCard.name} />),
+            (<img className="imgSrc" src={this.state.random1.img} alt={this.state.displayCard.name} />),
+            (<img className="imgSrc" src={this.state.random2.img} alt={this.state.displayCard.name} />)
         ]
 
         this.shuffle(images);
 
         return (
             <>
-                {images[0]}
-                {images[1]}
-                {images[2]}
+                <div className="card imageDiv">
+                    {images[0]}
+                </div>
+                <div className="card imageDiv">
+                    {images[1]}
+                </div>
+                <div className="card imageDiv">
+                    {images[2]}
+                </div>
             </>
         )
     }
 
     render() {
         return (
-            <div className="mainDiv">
-                {this.renderRedirect()}
-                <div className="leftSide">
-                    <div className="quizAlpha">
-                        {this.state.onealpha.alp_name}
+            <>
+
+                <div className="mainDiv">
+                    {this.renderRedirect()}
+                    <div className="quizLeft">
+                        <div className="secondPageQuizAlpha quizLeftLetter">
+                            <h1>{this.state.onealpha.alp_name}</h1>
+                        </div>
                     </div>
-                </div>
 
-                <div className="rightSide" className="card">
-                    {this.shuffleImages()}
-                </div>
-            </div>
 
+                    <div className="quizRight">
+
+                        {this.shuffleImages()}
+                    </div>
+
+                    <div >
+                        <button className="checkBox" onClick={() => {
+                            { this.goBack() }
+                        }}> X </button>
+                    </div>
+
+
+                </div>
+            </>
         )
     }
 }

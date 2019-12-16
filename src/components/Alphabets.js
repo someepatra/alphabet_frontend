@@ -35,11 +35,11 @@ class Alphabets extends Component {
                 <div className="leftSide">
                     {this.state.alphabets.map((alphabet, index) => {
                         return (
-                            <div className="eachAlpha" id="card1">
-                                <div key={alphabet.id}>
-                                    <h3 onClick={() => {
-                                        this.setCard(index)
-                                    }} className="alphaStyle"> {alphabet.alp_name} </h3>
+                            <div className="eachAlpha" id="card1" onClick={() => {
+                                this.setCard(index)
+                            }}>
+                                <div key={alphabet.id} className="alphaStyleDirectParent">
+                                    <h3 className="alphaStyle quizAlpha"> {alphabet.alp_name} </h3>
                                 </div>
                             </div>
                         )
@@ -49,9 +49,8 @@ class Alphabets extends Component {
                     <div className="card">
                         <Cards card={this.state.selectedCard} />
                     </div>
-                    <h1>Do u want to play a game</h1>
-                    {/* <button >yes</button> */}
-                    <Link to="/quiz"><button>Yes</button></Link>
+                    <h1 >Want to play a game</h1>
+                    <Link to="/quiz"><button className="btn btn-primary btn-lg buttonYes">Yes</button></Link>
                 </div>
             </div>
         )

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,17 +16,21 @@ code {
 .mainDiv{
   display: flex;
   flex-direction: row;
-  background-color: rgb(73, 226, 200);
+  align-content: center;
+  background-color: rgb(125, 235, 167);
+  border: dotted 2px royalblue;
 }
 .leftSide{
-  flex: 8;
+  flex: 2;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
+  border: solid 1px royalblue;
 }
 .rightSide{
-  margin-top: 80px;
-  flex: 4;
+  margin-top: 150px;
+  flex: 1;
+  text-align: center;
 }
 
 .eachAlpha {
@@ -33,33 +39,142 @@ code {
   height: 100px;
   margin: 35px;
 }
+@keyframes hoverAlpha {
+  from { 
+    width: 100px; 
+    height: 100px;
+  }
+  to { 
+    width: 120px; 
+    height: 120px;
+  }
+}
+
+.eachAlpha:hover {
+  animation-name: hoverAlpha;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.alphaStyleDirectParent {
+  /* border: solid blue 2px; */
+    width: inhert;
+    height: inherit;
+}
+
+@keyframes fontAlignmentChange {
+  from {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  to {
+    margin-top: 25px;
+    margin-left: 40px;
+  }
+}
 
 .alphaStyle{
   font-size: 50px;
-  color: red;
+  font-family: 'Anton', sans-serif;  color: red;
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
+  margin-left: 20px;
 }
 
-.quizAlpha{
+.alphaStyle:hover {
+  animation-name: fontAlignmentChange;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+
+.secondPageQuizAlpha {
   font-size: 150px;
   margin-left: 150px;
-  margin-top: 100px;
+  margin-top: 100px;  
 }
 
 .card{
-  margin-left: 60px;
-  box-shadow: 0 4px 8px 0 rgba(226, 116, 116, 0.2);
-  transition: 0.3s;
-  width: 40%; 
+  margin-left: 100px;
+  width: 60%; 
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 10px;
 }
-.card :hover {
-  box-shadow: 0 8px 16px 0 rgba(226, 116, 116, 0.2);
-}
-
 #card1{
   box-shadow: 0 4px 8px ;
   transition: 1s;
-  width: 50px;
+  width: 80px;
+  border-radius: 10px;
+  padding: 10px;
 }
-#card1 :hover{
+/* #card1 :hover{
   box-shadow: 0 8px 16px 0 rgba(93, 34, 231, 0.2);
+} */
+img{
+  width: 200px;
+  height:200px;
+}
+.quizLeft{
+  text-align: center;
+  flex: 5;
+  display: flex;
+  width: 100px;
+  height: 300px;
+  margin: auto;
+  /* border-right: solid 1px royalblue; */
+}
+.quizRight,.card{
+  margin-top: 80px;
+  flex: 8;
+}
+h1{
+  font-display: italic;
+  color: brown;
+}
+.buttonYes {
+  background-color: rgb(165, 100, 226);
+  color: rgb(136, 255, 0);
+}
+
+.imageDiv {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
+.imgSrc {
+  margin: 0 auto;
+}
+
+.quizLeftLetter {
+  margin: auto;
+  margin-left: 100px;
+  width: 200px; 
+  height: 400px;
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.quizLeftLetter > h1 {
+  font-family: 'Anton', sans-serif;  color: red;
+  font-size: 250px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.answer{
+  text-align: center;
+}
+.checkBox{
+  height: 40px;
+  width:40px;
+  background-color: rgb(168, 102, 230);
+  color: rgb(7, 78, 7);
+  font-size: 20px;
 }
