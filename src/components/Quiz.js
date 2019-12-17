@@ -13,7 +13,8 @@ class Quiz extends Component {
             onealpha: {},
             toHomePage: false,
             random1: {},
-            random2: {}
+            random2: {},
+            score: 0
         }
         this.nextQuiz = this.nextQuiz.bind(this)
         this.callAPI = this.callAPI.bind(this)
@@ -75,10 +76,11 @@ class Quiz extends Component {
                 index: this.state.index + 1
             })
             this.random();
-
+            let newScore = this.state.score + 1;
             this.setState({
                 onealpha: this.state.alphabets[this.state.index],
-                displayCard: this.state.cards[this.state.index]
+                displayCard: this.state.cards[this.state.index],
+                score: newScore
             })
         } else {
             this.setState({
@@ -137,8 +139,11 @@ class Quiz extends Component {
                     <div className="quizLeft">
                         <div className="secondPageQuizAlpha quizLeftLetter">
                             <h1>{this.state.onealpha.alp_name}</h1>
+
                         </div>
+                        <p>the score is: {this.state.score}</p>
                     </div>
+
 
 
                     <div className="quizRight">
