@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import './App.css';
+import './mediaQuery.css'
 import axios from "axios";
 import Alphabets from './components/Alphabets.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Quiz from "./components/Quiz";
+
 
 class App extends Component {
   constructor() {
