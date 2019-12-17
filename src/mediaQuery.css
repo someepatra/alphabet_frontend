@@ -16,7 +16,7 @@
         border: solid 1px royalblue;
       }
       .rightSide{
-        margin-top: 30px;
+        margin-top: 70px;
         flex: 3;
         text-align: center;
       }
@@ -24,32 +24,32 @@
         border: solid red 1px;
         width: 10px;
         height: 10px;
-        margin: 6px;
-        margin-left: 20px;
+        margin: 10px;
+        margin-left: 15px;
       }
       .alphaStyle{
-        font-size: 20px;
+        font-size: 18px;
         font-family: 'Anton', sans-serif;  color: red;
         width: 20px;
-        height: 20px;
-        margin-top: -10px;
+        height: 25px;
+        margin-top: -6px;
         margin-left: 25px;
       }
       .card{
-        margin-left: 60px;
+        margin-left: 70px;
         margin-top: 6px;
         width: 60%; 
-        height:50%;
+        height:60%;
         background-color: blueviolet;
         border-radius: 10px;
-        padding: 10px;
+        padding: 15px;
       }
       .quizLeft{
-        margin-left: 60px;
+        margin-left: 80px;
         margin-top: 6px;
       }
       .quizRight,.card{
-        margin-top: 10px;
+        margin-top: 14px;
         flex: 9;
       }
       .quizLeftLetter {

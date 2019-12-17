@@ -141,23 +141,18 @@ class Quiz extends Component {
                             <h1>{this.state.onealpha.alp_name}</h1>
 
                         </div>
-                        <p>the score is: {this.state.score}</p>
                     </div>
-
-
-
                     <div className="quizRight">
 
                         {this.shuffleImages()}
                     </div>
 
-                    <div >
+                    <div>
                         <button className="checkBox" onClick={() => {
                             { this.goBack() }
                         }}> X </button>
+                        <p className="score">Score: {this.state.score}</p>
                     </div>
-
-
                 </div>
             </>
         )
