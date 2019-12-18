@@ -6,7 +6,9 @@ import Alphabets from './components/Alphabets.js'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import Quiz from "./components/Quiz";
 
-const base_url = "https://alphabets-game.herokuapp.com" || 3001
+const base_url = "http://localhost:3000"
+// const base_url = "https://alphabets-game.herokuapp.com" || 3001
+
 
 
 class App extends Component {

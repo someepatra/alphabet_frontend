@@ -20,6 +20,7 @@
         flex: 3;
         text-align: center;
       }
+
       .eachAlpha {
         border: solid red 1px;
         width: 10px;
@@ -27,6 +28,23 @@
         margin: 10px;
         margin-left: 15px;
       }
+
+      .eachAlpha:hover {
+        animation-name: none;
+      }
+
+      @keyframes fontAlignmentChange {
+        from {
+          margin-top: 12px;
+          margin-left: 15px;
+        }
+        to {
+          margin-top: 15px;
+          margin-left: 20px;
+        }
+      }
+
+
       .alphaStyle{
         font-size: 18px;
         font-family: 'Anton', sans-serif;  color: red;
@@ -34,6 +52,9 @@
         height: 25px;
         margin-top: -6px;
         margin-left: 25px;
+      }
+      .alphaStyle:hover {
+        animation-name: none;
       }
       .card{
         margin-left: 70px;
