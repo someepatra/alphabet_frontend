@@ -28,7 +28,6 @@ class Quiz extends Component {
     async callAPI() {
         try {
             const request = await axios.get(`${this.props.base_url}/alphabets`);
-            console.log("show", request);
             const alphabetData = request.data;
             this.setState({
                 alphabets: alphabetData,
