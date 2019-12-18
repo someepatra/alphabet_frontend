@@ -3,8 +3,10 @@ import './App.css';
 import './mediaQuery.css'
 import axios from "axios";
 import Alphabets from './components/Alphabets.js'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import Quiz from "./components/Quiz";
+
+const base_url = "https://alphabets-game.herokuapp.com" || 3001
 
 
 class App extends Component {
@@ -21,8 +23,7 @@ class App extends Component {
   }
   async callAPI() {
     try {
-      const request = await axios.get("/alphabets");
-      console.log("show", request);
+      const request = await axios.get(`${base_url}/alphabets`);
       const alphabetData = request.data;
       this.setState({
         alphabets: alphabetData,
@@ -42,7 +43,7 @@ class App extends Component {
     return (
       <Router>
         <Route path="/" exact render={() => (<div>{renderAlphabet}</div>)} />
-        <Route path="/quiz" render={() => <Quiz alphabets={alphabets} />} />
+        <Route path="/quiz" render={() => <Quiz base_url={base_url} alphabets={alphabets} />} />
       </Router>
     );
   }

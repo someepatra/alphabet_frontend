@@ -114,7 +114,7 @@ img{
   width: 100px;
   height: 250px;
   margin: auto;
-  margin-left: 80px;
+  margin-left: 0px;
 }
 .quizRight,.card{
   margin-top: 60px;

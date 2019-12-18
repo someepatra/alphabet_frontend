@@ -27,7 +27,7 @@ class Quiz extends Component {
 
     async callAPI() {
         try {
-            const request = await axios.get("/alphabets");
+            const request = await axios.get(`${this.props.base_url}/alphabets`);
             console.log("show", request);
             const alphabetData = request.data;
             this.setState({
@@ -148,9 +148,7 @@ class Quiz extends Component {
                     </div>
 
                     <div>
-                        <button className="checkBox" onClick={() => {
-                            { this.goBack() }
-                        }}> X </button>
+                        <button className="checkBox" onClick={() => this.goBack()}> X </button>
                         <p className="score">Score: {this.state.score}</p>
                     </div>
                 </div>

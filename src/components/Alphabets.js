@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Cards from './Cards'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 class Alphabets extends Component {
     constructor() {
@@ -17,7 +17,6 @@ class Alphabets extends Component {
             alphabets: this.props.alphabets
         });
 
-        console.log(this.props.alphabets);
         this.setState({
             selectedCard: this.props.alphabets[0].cards[0]
         })
@@ -35,7 +34,7 @@ class Alphabets extends Component {
                 <div className="leftSide">
                     {this.state.alphabets.map((alphabet, index) => {
                         return (
-                            <div className="eachAlpha" id="card1" onClick={() => {
+                            <div className="eachAlpha" id="card1" key={alphabet.id} onClick={() => {
                                 this.setCard(index)
                             }}>
                                 <div key={alphabet.id} className="alphaStyleDirectParent">
