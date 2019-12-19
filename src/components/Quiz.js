@@ -68,7 +68,8 @@ class Quiz extends Component {
         })
         this.random();
     }
-
+    // on("click", event => {
+    //     audio.play();
     async nextQuiz() {
         if (this.state.index < 25) {
             await this.setState({

@@ -5,12 +5,11 @@ import axios from "axios";
 import Alphabets from './components/Alphabets.js'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import Quiz from "./components/Quiz";
+let baseURL = "https://alphabets-game.herokuapp.com"
 
-// const base_url = "http://localhost:3000"
-const base_url = "https://alphabets-game.herokuapp.com" || 3001
-
-
-
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003'
+}
 class App extends Component {
   constructor() {
     super();
