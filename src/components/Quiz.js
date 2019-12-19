@@ -67,9 +67,15 @@ class Quiz extends Component {
             displayCard: this.state.cards[this.state.index]
         })
         this.random();
-    }
-    // on("click", event => {
+
+    } // on("click", event => {
     //     audio.play();
+
+    wrongClick() {
+        let audio = new Audio("wrong-buzz.mp3");
+        audio.play();
+    }
+
     async nextQuiz() {
         if (this.state.index < 25) {
             await this.setState({
@@ -109,8 +115,8 @@ class Quiz extends Component {
 
         let images = [
             (<img className="imgSrc" onClick={() => this.nextQuiz()} src={this.state.displayCard.img} alt={this.state.displayCard.name} />),
-            (<img className="imgSrc" src={this.state.random1.img} alt={this.state.displayCard.name} />),
-            (<img className="imgSrc" src={this.state.random2.img} alt={this.state.displayCard.name} />)
+            (<img className="imgSrc" onClick={() => this.wrongClick()} src={this.state.random1.img} alt={this.state.displayCard.name} />),
+            (<img className="imgSrc" onClick={() => this.wrongClick()} src={this.state.random2.img} alt={this.state.displayCard.name} />)
         ]
 
         this.shuffle(images);
