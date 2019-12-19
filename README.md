@@ -25,5 +25,10 @@ https://alphabets-game.surge.sh
 3.) User can quit game anytime from quiz page to alphabets page by clicking "X" or user can play till end and redirect to main page.<br/>
 <p></p>
 
+<h3> Entity Relationship Diagram </h3>
+
+<img width="938" alt="Screen Shot 2019-12-11 at 7 04 53 AM" src="https://user-images.githubusercontent.com/50890918/71186852-eea67780-224b-11ea-8127-ffd5147216ef.png">
+
+
 
   
