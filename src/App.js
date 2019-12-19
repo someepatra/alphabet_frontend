@@ -8,7 +8,7 @@ import Quiz from "./components/Quiz";
 let base_url = "https://alphabets-game.herokuapp.com"
 
 if (process.env.NODE_ENV === 'development') {
-  base_url = 'http://localhost:3003'
+  base_url = 'http://localhost:3000'
 }
 class App extends Component {
   constructor() {
